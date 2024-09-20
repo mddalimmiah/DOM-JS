@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        .fruits-container li{
+            color:mediumorchid;
+        }
+        #fruits-title{
+            color:black;
+        }
+        .important-places{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h1>Welcome my DOM</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis amet architecto eaque voluptates culpa cum enim, molestiae sit iste, repellendus dolorem id minima ex nemo. Consectetur totam possimus vitae aliquam.</p> 
+   </header>
+   <main id="main-container">
+ ‍<section>
+    <h1>my awesome DOM</h1>
+    <ul>
+        <li>jalai set</li>
+        <li>sidrat</li>
+        <li>safi</li>
+        <li>jalai set</li>
+    </ul>
+ </section>
+    <section class="fruits-container">
+        <h1 id="fruits-title" class="some-class random-class blue-bg">Fruits i like it</h1>
+        <ul>
+        <li>apple</li>
+        <li>Banana</li>
+        <li>orange</li>
+        <li>mango</li>
+        <li>guava</li>
+    </ul>
+    </section>
+    <section id="places-container" class="large-text">
+        <h1 id="places-title">places i like to visit</h1>
+        <ul id="places-list">
+            <li class="important-places">coxsBazar</li>
+            <li class="important-places">sundarban</li>
+            <li class="important-places">Bandorban</li>
+            <li class="other-place">sylhet</li>
+            <li>sajekbeli</li>
+        </ul>
+    </section>
+   </main>
+   
+   <script src="js/dom.js"></script>
+   <script src="js/append.js"></script> 
+   <script src="js/styleInjs.js"></script>
+   <!-- js age j style kora hoyece segola aga pabe porer ta pabe na tai porer golo pawer jonno js file ta ekhane ager tar opore deya hoyece -->
+   <script>
+  
+ 
+
+    // const student={
+    //     name:'dalim',
+    //     id:121,
+    //     study:function(time){
+    //         console.log(time, 'study kortece');
+    //     }
+    // }
+
+    const liCollectionTagname=document.getElementsByTagName('li');
+    // console.log(liCollectionTagname);
+    for(const li of liCollectionTagname){
+        // console.log(li.innerText)
+    }
+    const allHeadingTag=document.getElementsByTagName('h1');
+    // console.log(allHeadingTag);
+    for(const h1 of allHeadingTag){
+        // console.log(h1)
+    }
+    const fruitsTitle=document.getElementById('fruits-title');
+    fruitsTitle.innerText='fruits changed by js'
+    const places=document.getElementsByClassName('important-places');
+    // console.log(places)
+    for(const place of places){
+        // console.log(place.innerText);
+    }
+  // query selector all
+  const someLi=document.querySelectorAll('.fruits-container li');
+//   console.log(someLi);
+  for(const li of someLi){
+    // console.log(li.innerText);
+  }
+   </script>
+</body>
+</html>

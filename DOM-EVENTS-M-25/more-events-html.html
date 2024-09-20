@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+    <h1>Explore More Events</h1>
+    <button id="btn-more">Events</button>
+    <input type="text" id="text-field">
+    <script>
+        // document.getElementById('text-field').addEventListener('focus', function(){ //focus  ইনপুট ফিল্ড এ কারসর নিলে দেখাবে বা কাউন্ট করবে। 
+        //     console.log('events triggered inside the input field')
+        // });
+        // document.getElementById('text-field').addEventListener('blur', function(){ //  blur ta  ইনপুট  ফিল্ড এর বাহিরে বা খালি যায়গায় ক্লিক করলে কাউন্ট করবে। 
+        //     console.log('events triggered inside the input field blur')
+        // });
+        // document.getElementById('text-field').addEventListener('keydown', function(){ //  
+        //     console.log(event.target.value) //   event  দিলে ইভেন্ট দেখাবে target  দিলে ইনপুট ফিল্ড দেখাবে। value  দিলে ইনপুট ফিল্ডে যা  লিখবো একটা ওয়ার্ড কম দেখাবে। 
+        // });
+        // document.getElementById('text-field').addEventListener('keypress', function(){ //  
+        //     console.log(event.target.value) //   event  দিলে ইভেন্ট দেখাবে target  দিলে ইনপুট ফিল্ড দেখাবে। value  দিলে ইনপুট ফিল্ডে যা  লিখবো একটা ওয়ার্ড কম দেখাবে। keydown r keypress  একি আসবে। 
+        // });
+        document.getElementById('text-field').addEventListener('keyup', function(){ // keyup  দিলে সব  লেখা একসাথে আসবে..তারমানে আগে প্রেস হয়েছে বুঝে নিবে তাই ইনপুট ফিল্ড এ লেখলে সাথে সাথেই আসবে। যা keydown r keypress থেকে ভিন্ন্।  
+            console.log(event.target.value) //   event  দিলে ইভেন্ট দেখাবে target  দিলে ইনপুট ফিল্ড দেখাবে। value  দিলে ইনপুট ফিল্ডে যা  লিখবো একটা ওয়ার্ড কম দেখাবে।
+        });
+        // document.getElementById('btn-more').addEventListener('mouseenter', function(){ //mouseenter  করলে যতবার নিবো কারসর ততবার কাউন্ট হবে। 
+        document.getElementById('btn-more').addEventListener('mousemove', function(){ //mousemove  করলে যতবার নিবো কারসর ততবার কাউন্ট হবে। 
+            console.log('events triggered')
+        });
+    </script>
+</body>
+</html>

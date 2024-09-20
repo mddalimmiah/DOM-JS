@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1 onclick="console.log('7')">Explore DOM Events</h1>
+    <button onclick="console.log('this is button')">Click Me!</button>
+    <button onclick="console.log('this is button')">Another Button!</button>
+    <br>
+    <br>
+    <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow!</button>
+    <button id="blue">make blue</button>
+    <button onclick="makeRed()">make red</button>
+    <button id="make-green">make green</button>
+    <button id="make-purple">make purple</button>
+    <button id="make-cyan">make cyan</button>
+</body>
+<script>
+    document.getElementById('blue').addEventListener('click', function(){
+        document.body.style.backgroundColor='blue';
+    })
+    function makeRed(){ 
+        document.body.style.backgroundColor='red';
+    }
+    const makeGreenbtn=document.getElementById('make-green');
+    makeGreenbtn.onclick= makeGreen //variable abong function name ak kora jabe na tahe error dibe
+    function makeGreen(){
+        document.body.style.backgroundColor='green';
+    }
+    const makePurpleButton=document.getElementById('make-purple');
+    makePurpleButton.onclick=function(){
+        document.body.style.backgroundColor='purple';
+    }
+    const makeCyanbtn=document.getElementById('make-cyan');
+    makeCyanbtn.addEventListener('click', makeCyan)
+    function makeCyan(){
+        document.body.style.backgroundColor='cyan';
+    }
+</script>
+</html>

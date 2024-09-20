@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github </title>
+</head>
+<body>
+    <h1 id="secret-info">My secret info</h1>
+    <input type="text" name="" id="delete-confirm" placeholder="Please type Delete">
+    <button id="btn-delete" disabled>Delete</button>
+
+    <script>
+        // ইনপুট এর লিখাটা ডিলেট করার জন্য এই ফাংশন টা করা হয়েছে। শুধু মাত্র ইনপুট ফিল্ডে delete লিখলেই বাটন টা এনাবল হবে। তারপর বাটন এ ক্লিক করলে উপরের লিখাটা মুছে যাবে। বা ডিলেট হয়ে যাব্ ে
+           document.getElementById('delete-confirm').addEventListener('keyup', function(event){ // ভিতরের লিখাটা নেওয়ার জন্য  event নাম দেয়া হয়েছে 
+            const text=event.target.value;
+            const deleteButton=document.getElementById('btn-delete')
+            if(text==='delete'){
+                deleteButton.removeAttribute('disabled'); //disabled btn enable hobe 
+            }
+            else{
+                deleteButton.setAttribute('disabled', true); // delete likhlei এনাবল হবে অন্যকিছু লিখলে ডিসেবল হবে। 
+            }
+        });
+        // এটা ও ডিলেট  এর জন্য করা হয়েছে তবে বাটন এ ক্লিক করলেই উপরের লিখাটা ডিলেট হয়ে যাবে। 
+            document.getElementById('btn-delete').addEventListener('click', function(){ //btn  ক্লিক করা মাত্র উপরের লেখাটা হাইড হয়ে যাবে। 
+            console.log('click delete button')
+            const secret=document.getElementById('secret-info');
+            secret.style.display='none'; // লেখাটা হাইড করার জন্য। 
+        });
+
+     
+    </script>
+</body>
+</html>

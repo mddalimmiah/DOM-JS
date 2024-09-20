@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summery dom</title>
+</head>
+<body>
+    <h1>Dom summery</h1>
+    <p id="update-text">input text update</p>
+<input type="text" name="" id="input-text">
+<button id="update-btn">update</button>
+<br>
+<br>
+
+    <h3 id="text">Default text</h3>
+    
+    <button onclick="eventTExt()">Final event dom function add evenlistener</button>
+    <button id="addEvent">addvent listener button </button>
+
+
+    <script>
+        function eventTExt(){
+           const btnText=document.getElementById('text');
+           btnText.innerText='this is text change by id';
+        }
+        document.getElementById('addEvent').addEventListener('click', function(){
+           const changeText= document.getElementById('text');
+           changeText.innerText='change by add event listerner text';
+        })
+
+        document.getElementById('update-btn').addEventListener('click', function(){
+            const inputField=document.getElementById('input-text');
+            const inputText=inputField.value;
+            const updateText=document.getElementById('update-text');
+            updateText.innerText=inputText;
+            inputField.value='';
+        })
+    </script>
+</body>
+</html>

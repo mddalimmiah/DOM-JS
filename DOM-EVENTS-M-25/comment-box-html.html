@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD New Comment</title>
+</head>
+<body>
+    <h1>Please Add your Commnet</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nesciunt quibusdam illum velit optio deserunt, autem perspiciatis dolorum impedit unde minus temporibus saepe quo odit doloremque id quos tenetur provident ab totam ad tempore laudantium repellat. Quibusdam impedit est reiciendis ex unde expedita accusamus quasi, commodi eaque autem ad harum.</p>
+        <p>Officia nesciunt ex voluptatibus voluptas aperiam, facere voluptates repudiandae quam ad, adipisci blanditiis deleniti! Quas explicabo quod, autem harum error possimus temporibus saepe, hic voluptatum, molestiae nostrum perferendis doloribus nemo dignissimos ad praesentium dolores asperiores fugit deserunt? Laboriosam, voluptatem sunt aliquam maxime libero accusantium sapiente inventore, deserunt doloribus omnis cum?</p>
+        <p>Facere soluta natus quaerat, consectetur mollitia aut in enim reprehenderit, illum, distinctio veritatis. Quod reiciendis ad nemo atque nihil minus earum libero cumque. Magni quae neque eveniet tempore eum minus quos error consequuntur nobis excepturi omnis aspernatur quibusdam impedit enim, porro eaque vero inventore necessitatibus dolore ratione voluptate similique quis?</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post">Post</button>
+    </div>
+    <script>
+
+        // step-1: add event listener to the post button (এ্যাড করবো এডইভেন্ট লিসেনার এ ক্লিক করলেই ফাংশন টা কাজ করবে। ফাংশন টা হবে  এনোনিমাস ফাংশন বা নামবীহিন ফাংশন)
+        document.getElementById('btn-post').addEventListener('click', function(){
+            // console.log('post btn clicked')
+            // step-2: get the comment inside the text area. টেক্সট এরিয়া থেকে টেক্সট টা নেওয়ার জন্য
+            const commentBox=document.getElementById('new-comment');
+            // console.log(commentBox.value); value ba text ta dekhar jonno
+            const newComment=commentBox.value;
+
+            // step-3: set the comment inside the comment container ( আামরা কমেন্ট কনটেইনার এর ভিতর টেক্সটা সেট করবো। )
+            // 1. get the comment container
+            // 2. create a new element (p tag)
+            // 3. set the text of the comment as inner text of the p tag
+            // 4. add the p tag using appendChild
+            const commentContainer=document.getElementById('comment-container');
+            const p=document.createElement('p'); // প্যারাগ্রাফ ক্রিয়েট করবো।
+            p.innerText=newComment; //  প্যারাগ্রাফের ভিতর টেক্সট দিবো এটা newComment এ ভ্যারিএবল এ টেক্সট এরিয়াতে যেই টেক্সট আছে ওইটা newComment নামক ভ্যারিএবল এ রাখছি।
+            commentContainer.appendChild(p) //  তারপর কমেন্ট কনটেইনার এর ভিতর চাইল্ড হিসেবে এ্যাপেন্ড করবো মানে এ্যাড করবো। কাকে প্যারাগ্রাফ টাকে।
+
+            // step-4: clear the text area:
+            commentBox.value=''; //  কমেন্ট বক্স বা টেক্সট এরিয়া থেকে টেক্সট সরানোর বা ক্লিয়ার করার জন্য commentBox.value=''; এমটি স্ট্রিং দিতে হবে।
+        })
+    </script>
+</body>
+</html>

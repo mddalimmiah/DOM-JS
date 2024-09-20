@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    <h1>Explore Event Delegate</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Sequi, ad ex.</li>
+            <li class="item">Reprehenderit, repudiandae consectetur!</li>
+            <li class="item">Mollitia, officiis rerum.</li>
+            <li class="item">Porro, corporis animi.</li>
+            <li class="item">Cumque, est ipsam.</li>
+        </ul>
+        <button id="btn-add-item">Add Item</button>
+    </section>
+
+    <script>
+        const items=document.getElementsByClassName('item');
+        // console.log(items); // items gola array like object
+        // এ্যারে লাইক তাই আমরা ফর অফ লুপ ব্যবহার করবো।
+        for(const item of items){
+            // console.log(item);
+            // item.addEventListener('click', function(){ // id  হলে আমরা এগের মত করে করতাম এটা যেহেতু লুপ করে সিঙ্গেল করছি মানে আলাদা আলাদ করে আইটেম টা নিছি তাই আইটেম দিয়ে এ্যাড ইভেন্ট লিসেনার করছি।
+            //     console.log(item) // eta loop diye kora
+            // })
+            // item.addEventListener('click', function(event){ //  //  আমরা loop diye  o korte pari আইটেম দিয়ে ও করতে পারি আবার ইভেন্ট . টারগেট দিয়ে করতে পারি। 
+            //     // console.log(event.target.parentNode)
+            //     event.target.parentNode.removeChild(event.target); // এটা দিয়ে যেইটা কে ক্লিক করবো প্যারেন্ট নোড সেটা রিমুভ করে দিবে। 
+            // })
+           
+           document.getElementById('list-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target) //কোন কিছু এ্যাড করতে বা রিমুভ করতে চাইলে প্যারেন্ট কে ডিক্লেয়ার বা সিলেক্ট করলে এ্যাড এবং রিমুভ করা যাবে। 
+           })
+        }
+        document.getElementById('btn-add-item').addEventListener('click', function(){
+            const listContainer=document.getElementById('list-container');
+            const li=document.createElement('li');
+            li.innerText='Dalim';
+            li.classList.add('item');
+            listContainer.appendChild(li)
+        })
+    </script>
+</body>
+</html>

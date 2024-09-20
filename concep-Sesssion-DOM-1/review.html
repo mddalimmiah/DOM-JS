@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .input-container{
+            text-align: center;
+        }
+        #btn{
+            background-color: green;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        #change-text{
+            color: red;
+            font-size: large;
+        }
+        #text-container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to my Review</h1>
+    <div class="input-container">
+        <textarea name="" id="input-text" cols="60" rows="10" placeholder="type your review"></textarea><br><br>
+        <button id="submit-btn">Submit</button>
+       
+    </div>
+    <div id="text-container">
+        <h1 id="change-text">This is change text by click btn</h1>
+    </div>
+
+    <script>
+        let serialCount=1;
+        document.getElementById('submit-btn').addEventListener('click', function(){
+            console.log('click btn and change text')
+            // const textElement=document.querySelector('textarea');
+            // const inputValue=textElement.value;
+            const inpValue=document.querySelector('textarea').value; //  এই ভাবে ও করা যায় একলাইনে ভ্যালু নেওেয়ার জন্য। 
+            // console.log(inputValue)
+            console.log(inpValue)
+            const containerText=document.getElementById('text-container');
+            const p=document.createElement('p');
+            p.innerText= serialCount +'.'+ inpValue;
+            serialCount++;
+            containerText.appendChild(p)
+            document.querySelector('textarea').value=''; //value ta update kore faka kore dibe
+          
+        });
+        document.getElementById('input-text').addEventListener('keyup', function(event){
+            if(event.key==='Enter'){ //text এরিয়াতে কোন কিছু লিখলে এন্টার বাটন চাপলে লেখা গুলো নিচে জমা হবে আগেরটা থেকে প্রাথ্যক্য হলো আগেরটা বাটন এ চাপ দিতে হতো এটাতে  key board Enter press korle i hobe
+                const inpValue=document.querySelector('textarea').value; //  এই ভাবে ও করা যায় একলাইনে ভ্যালু নেওেয়ার জন্য। 
+            // console.log(inputValue)
+            console.log(inpValue)
+            const containerText=document.getElementById('text-container');
+            const p=document.createElement('p');
+            p.innerText= serialCount +'.'+ inpValue;
+            serialCount++;
+            containerText.appendChild(p)
+            document.querySelector('textarea').value='';
+            }
+        })
+    </script>
+</body>
+</html>

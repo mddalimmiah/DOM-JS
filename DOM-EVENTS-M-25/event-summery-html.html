@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JS DOM Event summery</title>
+</head>
+<body>
+    <h1>Final DOM Event Handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <p id="input-text-display">Default input Text</p>
+    <input type="text" name="" id="input-field">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnclick()">Handle Event by add onclick Function</button>
+    <button id="event-listener">Handle Event by addEventListener</button>
+    <script>
+        function handleOnclick(){
+            // console.log('button clicked')
+            const handlerStatus=document.getElementById('handler-status');
+            handlerStatus.innerText='Handle by function attached on onclick attribute';
+        }
+
+        // option-2 
+        document.getElementById('event-listener').addEventListener('click', function(){ // function er nam na dile bole annonymous function r name dile bole name function 
+            const handlerStatus=document.getElementById('handler-status');
+            handlerStatus.innerText='Text Updated by addEventListenner button';
+        })
+
+        // option-2 recap:
+        document.getElementById('btn-update').addEventListener('click', function(){
+            // console.log('update button clicked'); (dekhar jonno eta ) 
+
+            const inputField=document.getElementById('input-field'); // ইনপুট ফিল্ড নামক আইডিটা পাওয়ার জন্য। 
+            // console.log(inputField.value) // lekha ta paite hole value add korte hobe ba nite hobe 
+            const inputText=inputField.value; ইনপুট এ যা লিখবো তা ইনপুট টেক্স ভ্যারিএবল এ রাখবে। 
+            const p =document.getElementById('input-text-display'); পি ভ্যালু্র মধ্যে ইনপুট টেক্সট ভ্যালু টা  আপডেট দেয়ার জন্য। ইনপুটে যা লিখবো তা পি টেগ এর টেক্সটা আপডেট হয়ে  যাবে। 
+            p.innerText=inputText; //  আপডেট হবে ইনপটে যা দিবো। 
+            inputField.value=''; //  ইনপুট থেকে লেখা টা খালি হয়ে যাওয়ার জন্য ।  ইনপুট থেকে লেখাটা মুছে যাবে। 
+        })
+    </script>
+</body>
+</html>
